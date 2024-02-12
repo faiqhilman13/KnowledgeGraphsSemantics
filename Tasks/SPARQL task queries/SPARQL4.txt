@@ -1,0 +1,15 @@
+quer = g.query(
+"""    
+PREFIX cw: <http://www.semanticweb.org/city/in3067-inm713/2023/restaurants/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT (COUNT(DISTINCT ?restaurant) AS ?count) ?state
+WHERE
+{
+?restaurant cw:locatedInState ?state .
+?state rdf:type cw:State .
+}
+GROUP BY ?state
+HAVING(COUNT(?restaurant) >5)
+""")

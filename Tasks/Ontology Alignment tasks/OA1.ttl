@@ -1,0 +1,20 @@
+@prefix cw: <http://www.semanticweb.org/city/in3067-inm713/2023/restaurants#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pizza: <http://www.co-ode.org/ontologies/pizza/pizza.owl#> .
+
+pizza:Country owl:equivalentClass cw:Country .
+
+pizza:Food owl:equivalentClass cw:Food .
+
+pizza:Mushroom owl:equivalentClass cw:Mushroom .
+
+pizza:NamedPizza owl:equivalentClass cw:NamedPizza .
+
+pizza:Pizza owl:equivalentClass cw:Pizza .
+
+pizza:VegetarianPizza owl:equivalentClass cw:VegetarianPizza .
+
+pizza:hasIngredient owl:equivalentProperty cw:hasIngredient .
+
+pizza:isIngredientOf owl:equivalentProperty cw:isIngredientOf .
+

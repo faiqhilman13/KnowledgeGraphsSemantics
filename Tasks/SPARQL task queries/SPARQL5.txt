@@ -1,0 +1,16 @@
+quer = g.query(
+"""    
+PREFIX cw: <http://www.semanticweb.org/city/in3067-inm713/2023/restaurants/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT ?category (COUNT(?pizza) AS ?count) (AVG(?price) AS ?avgPrice)
+WHERE
+{
+?pizza cw:hasMenuCategory ?category .
+?pizza cw:hasPrice ?price .
+}
+GROUP BY ?category
+HAVING(COUNT(?category) >5)
+ORDER BY ASC(?count) ASC(?avgPrice)
+""")

@@ -1,0 +1,14 @@
+quer = g.query(
+"""    
+PREFIX cw: <http://www.semanticweb.org/city/in3067-inm713/2023/restaurants/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT (MAX(?price) AS ?maxprice) 
+WHERE
+{
+?pizza rdf:type cw:Pizza .
+?pizza cw:hasPrice ?price . 
+FILTER (?price <=20)
+}
+
+""")

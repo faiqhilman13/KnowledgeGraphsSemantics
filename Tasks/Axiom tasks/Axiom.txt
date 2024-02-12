@@ -1,0 +1,58 @@
+Subtask OWL.1 - Atomic subsumption
+Pizzeria ⊑ Restaurant 
+FastFoodRestaurant ⊑ Restaurant 
+DessertPizza ⊑ Pizza
+
+
+Subtask OWL.2 - Universal restriction
+Pizzeria ⊑ ∀serves.Pizza 
+VeganPizzeria ⊑ ∀serves.VeganPizza 
+HawaiianPizza ⊑ ∀hasTopping.PineappleTopping 
+
+
+Subtask OWL.3 - Existential restriction
+Pizzeria ⊑ ∃locatedIn.City 
+Restaurant ⊑ ∃hasMenu.Menu
+Pizza ⊑ ∃hasOrigin.Country
+
+
+Subtask OWL.4 - Union
+PizzaMargherita ⊔ PizzaHawaii ⊑ Pizza
+ThinCrustBase ⊔ ThickCrustBase ⊑ PizzaBase
+SmallPizza ⊔ MediumPizza ⊔ LargePizza ⊑ PizzaSize
+
+
+Subtask OWL.5 - Intersection
+VegetableTopping ⊓ NonVegetableTopping ⊑ ContradictoryTopping
+DineInPizza ⊓ TakeAwayPizza ⊑ FlexiblePizzaOffering
+NeapolitanPizza ⊓ NewYorkStylePizza ⊑ HybridPizzaStyle
+
+
+Subtask OWL.6 - Cardinality restriction
+Pizzeria ⊑ ≥ 1 serves.Pizza
+Pizza ⊑ ≤ 3 hasTopping.Topping
+Pizzeria ⊑ = 1 locatedIn.City
+
+
+Subtask OWL.7 - Disjoint axiom
+DisjointClasses(Pizzeria, FastFoodRestaurant)
+DisjointClasses(MeatTopping, VegetarianTopping) 
+DisjointClasses(ThinCrustPizza, DeepDishPizza)
+
+
+Subtask OWL.8 - Property chain
+hasIngredient • isUsedOn ⊑ hasIndirectIngredient
+isLocatedIn • serves ⊑ indirectlyServes
+hasIngredient • hasTopping ⊑ hasIndirectTopping
+
+
+Subtask OWL.9 - Role assertion
+serves(Pizzeria1, Pizza1)
+serves(Pizzeria1, Pizza2)
+serves(Pizzeria3, Pizza4)
+
+
+Subtask OWL.10 - Complex class expression
+PizzeriaWithVeganOptions ⊑ Pizzeria ⊓ ∃serves.VeganPizza
+WoodFiredPizza ⊑ Pizza ⊓ ∃hasCookingStyle.WoodFired
+SpicyPizza ⊑ Pizza ⊓ ∃hasSpiciness.Spicy

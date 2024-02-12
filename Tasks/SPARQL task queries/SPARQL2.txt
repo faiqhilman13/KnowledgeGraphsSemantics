@@ -1,0 +1,15 @@
+quer = g.query(
+"""    
+PREFIX cw: <http://www.semanticweb.org/city/in3067-inm713/2023/restaurants/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT (AVG(?price) AS ?avgprice) 
+WHERE
+{
+?pizza rdf:type cw:Pizza .
+?pizza cw:hasPrice ?price .
+?restaurant cw:Serves ?pizza .
+FILTER (?price >=20)
+}
+
+""")

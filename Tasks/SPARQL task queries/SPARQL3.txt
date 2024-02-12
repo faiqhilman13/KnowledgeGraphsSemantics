@@ -1,0 +1,20 @@
+quer = g.query(
+"""
+PREFIX cw: <http://www.semanticweb.org/city/in3067-inm713/2023/restaurants/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?restaurant
+WHERE {
+  {
+    ?restaurant cw:locatedInState ?state .
+    ?state cw:hasName "new_york" .
+  }
+  UNION
+  {
+    ?restaurant cw:locatedInState ?state .
+    ?state cw:hasName "los_angeles" .
+  }
+  FILTER NOT EXISTS {
+    ?restaurant cw:Name "Mcdonalds" .
+  }
+}""")

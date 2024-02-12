@@ -1,0 +1,13 @@
+quer = g.query(
+    """
+    PREFIX cw: <http://www.semanticweb.org/city/in3067-inm713/2023/restaurants/>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+    SELECT ?restaurant ?state
+    WHERE {
+      ?restaurant a cw:Restaurant .
+      ?restaurant cw:locatedInState ?state .
+      FILTER(?state = cw:california) .
+    }
+    """
+)
